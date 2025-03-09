@@ -5,7 +5,7 @@ AI For Good Hackathon - https://lu.ma/slx5t6ik?tk=s2GXhE
 Solulu is a social media app designed to reduce screen time for kids and teens by gamifying their passions and their friends' passions. It is the solution to the doom scrolling delusion. The app encourages users to engage in real-world activities through daily quests and shared challenges. 
 The app supports UN Sustainable Development Goals 3 (Good Health and Well being), 4 (Quality Education), 11 (Sustainable cities and communities), 17 (Partnership for the goals).
 
-<img width="953" alt="Screenshot 2025-03-09 at 4 50 41 PM" src="https://github.com/user-attachments/assets/c697e8cd-1d7e-4464-9610-e587e1447b12" />
+
 
 ## Features
 - **User Authentication**: Login and signup screens for secure access.
@@ -14,7 +14,7 @@ The app supports UN Sustainable Development Goals 3 (Good Health and Well being)
 - **Task Validation**: Image-based verification to confirm task completion.
 - **Gamification**: Rewards and achievements to keep users engaged.
   
-<img width="548" alt="Screenshot 2025-03-09 at 4 51 02 PM" src="https://github.com/user-attachments/assets/9690bd4b-1206-4cee-834c-a619dbbe4b78" />
+
 
 ## Tech Stack
 ### Frontend
@@ -28,6 +28,8 @@ The app supports UN Sustainable Development Goals 3 (Good Health and Well being)
 - **Neo4j**:
   - Manages user relationships and hobbies.
   - Generates friend-based tasks using graph-based analysis.
+    
+<img width="953" alt="Screenshot 2025-03-09 at 4 50 41 PM" src="https://github.com/user-attachments/assets/c697e8cd-1d7e-4464-9610-e587e1447b12" />
 
 ## Installation & Setup
 ### Prerequisites
@@ -36,6 +38,7 @@ The app supports UN Sustainable Development Goals 3 (Good Health and Well being)
 - Neo4j and Qdrant database instance
 - Groq API access
 
+<img width="548" alt="Screenshot 2025-03-09 at 4 51 02 PM" src="https://github.com/user-attachments/assets/9690bd4b-1206-4cee-834c-a619dbbe4b78" />
 
 ### Steps
 
