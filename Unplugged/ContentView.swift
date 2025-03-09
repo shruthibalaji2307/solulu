@@ -95,6 +95,8 @@ struct HomeScreen: View {
     @State private var auraPoints = 0
     @State private var streak = 0
     @State private var showConfetti = false
+    @State private var showImageUpload = false
+    @State private var challengeCompleted = false
     
     // Dummy Leaderboard Data
     let leaderboard = [
@@ -133,21 +135,32 @@ struct HomeScreen: View {
                     .foregroundColor(.white)
                     .padding(.horizontal, 30)
                 
-                Button(action: completeChallenge) {
-                    HStack {
-                        Image(systemName: "checkmark.circle.fill")
-                            .font(.title)
-                        Text("Complete Challenge")
-                            .font(.headline)
+                if !challengeCompleted {
+                    Button(action: {
+                        showImageUpload = true
+                    }) {
+                        HStack {
+                            Image(systemName: "checkmark.circle.fill")
+                                .font(.title)
+                            Text("Complete Challenge")
+                                .font(.headline)
+                        }
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(maxWidth: 250)
+                        .background(LinearGradient(gradient: Gradient(colors: [Color.green, Color.blue]), startPoint: .leading, endPoint: .trailing))
+                        .cornerRadius(15)
+                        .shadow(radius: 5)
+                        .scaleEffect(showConfetti ? 1.1 : 1.0)
+                        .animation(.easeInOut(duration: 0.3), value: showConfetti)
                     }
-                    .foregroundColor(.white)
-                    .padding()
-                    .frame(maxWidth: 250)
-                    .background(LinearGradient(gradient: Gradient(colors: [Color.green, Color.blue]), startPoint: .leading, endPoint: .trailing))
-                    .cornerRadius(15)
-                    .shadow(radius: 5)
-                    .scaleEffect(showConfetti ? 1.1 : 1.0)
-                    .animation(.easeInOut(duration: 0.3), value: showConfetti)
+                    .sheet(isPresented: $showImageUpload) {
+                        ImageUploadView()
+                            .onDisappear {
+                                challengeCompleted = true
+                                auraPoints += 100
+                            }
+                    }
                 }
                 
                 Text("Aura Points: \(auraPoints) | Streak: \(streak)🔥")
