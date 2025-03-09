@@ -7,18 +7,13 @@ struct SplashScreenView: View {
         NavigationStack {
             VStack {
                 if isActive {
-                    LoginView()
+                    WelcomeView()
                 } else {
                     VStack {
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 20)
-                                .stroke(Color.red, lineWidth: 4)
-                                .frame(width: 100, height: 150)
-                            
-                            Text("X")
-                                .font(.system(size: 60, weight: .bold))
-                                .foregroundColor(.green)
-                        }
+                        Image("logo")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 150, height: 150)
                         
                         Text("Solulu")
                             .font(.largeTitle)

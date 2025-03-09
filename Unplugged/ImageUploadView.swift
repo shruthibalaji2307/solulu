@@ -70,39 +70,42 @@ struct ImageUploadView: View {
     func uploadImage() {
         isUploading = true
         
-        // Convert UIImage to base64 string
+        // Convert UIImage to PNG data
         guard let selectedImage = selectedImage,
-            let imageData = selectedImage.pngData() else {
+            // let resizedImage = resizeImage(selectedImage, targetSizeKB: 1000),
+            let imageData = selectedImage.jpegData(compressionQuality: 0.8) else {
+            print("Failed to convert image to PNG data")
             verificationMessage = "Error preparing image"
             isUploading = false
             return
         }
         
-        let base64String = "data:image/png;base64," + imageData.base64EncodedString()
+        print("Image data size: \(imageData.count) bytes")
         
         let url = URL(string: "http://localhost:5000/verify")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/octet-stream", forHTTPHeaderField: "Content-Type")
+        request.setValue(taskDescription, forHTTPHeaderField: "Task")
         
-        let body: [String: Any] = [
-            "task": taskDescription,
-            "image_url": base64String
-        ]
+        request.httpBody = imageData
         
-        request.httpBody = try? JSONSerialization.data(withJSONObject: body, options: [])
+        print("Task description: \(taskDescription)")
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             DispatchQueue.main.async {
                 if let error = error {
+                    print("Network error: \(error.localizedDescription)")
                     isUploading = false
                     verificationMessage = "Error: \(error.localizedDescription)"
                     return
                 }
                 
                 if let data = data {
+                    print("Received response data length: \(data.count)")
                     if let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
                     let result = json["result"] as? Bool {
+                        print("Verification result: \(result)")
                         isUploading = false
                         showSuccessMessage = result
                         verificationMessage = result ? "Challenge completed successfully! Aura Points: 100" : "This image doesn't match the challenge. Try again!"
@@ -148,6 +151,37 @@ struct ImagePickerView: View {
             .navigationBarItems(trailing: Button("Cancel") {
                 presentationMode.wrappedValue.dismiss()
             })
+        }
+    }
+}
+
+func resizeImage(_ image: UIImage, targetSizeKB: Int) -> UIImage? {
+    let targetSizeBytes = targetSizeKB * 1024
+    var compression: CGFloat = 1.0
+    var imageSize = image.size
+    
+    // First try just compressing the existing image
+    if let data = image.jpegData(compressionQuality: 0.8), data.count <= targetSizeBytes {
+        return image
+    }
+    
+    // If still too large, resize the dimensions
+    while true {
+        let ratio = sqrt(CGFloat(targetSizeBytes) / CGFloat(image.jpegData(compressionQuality: 0.8)?.count ?? 0))
+        imageSize = CGSize(width: imageSize.width * ratio, height: imageSize.height * ratio)
+        
+        let renderer = UIGraphicsImageRenderer(size: imageSize)
+        let resized = renderer.image { context in
+            image.draw(in: CGRect(origin: .zero, size: imageSize))
+        }
+        
+        if let data = resized.jpegData(compressionQuality: 0.8), data.count <= targetSizeBytes {
+            return resized
+        }
+        
+        if imageSize.width < 200 || imageSize.height < 200 {
+            // Prevent image from becoming too small
+            return resized
         }
     }
 }
