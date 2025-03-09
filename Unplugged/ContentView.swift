@@ -91,7 +91,7 @@ struct InterestCheckbox: View {
 struct HomeScreen: View {
     var selectedInterests: [String]
     
-    @State private var dailyChallenge = "Go for a 15-minute walk and take a photo of something cool!"
+    @State private var dailyChallenge = "Hike with friends!"
     @State private var auraPoints = 0
     @State private var streak = 0
     @State private var showConfetti = false
@@ -100,11 +100,11 @@ struct HomeScreen: View {
     
     // Dummy Leaderboard Data
     let leaderboard = [
-        ("Alice", 1200, 15),
-        ("Bob", 950, 12),
-        ("Charlie", 870, 10),
-        ("You", 800, 8),
-        ("David", 750, 7)
+        ("Meghan", 1200, 15),
+        ("Jayden", 950, 12),
+        ("Gabriele", 870, 10),
+        ("You (Shiv)", 800, 8),
+        ("Hana", 750, 7)
     ]
     
     var body: some View {
@@ -113,7 +113,7 @@ struct HomeScreen: View {
                 .ignoresSafeArea()
             
             VStack(spacing: 20) {
-                Text("OffScreen")
+                Text("Solulu")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .foregroundColor(.white)
@@ -155,7 +155,7 @@ struct HomeScreen: View {
                         .animation(.easeInOut(duration: 0.3), value: showConfetti)
                     }
                     .sheet(isPresented: $showImageUpload) {
-                        ImageUploadView()
+                        ImageUploadView(taskDescription: dailyChallenge)
                             .onDisappear {
                                 challengeCompleted = true
                                 auraPoints += 100
@@ -231,9 +231,9 @@ struct ActivityScreen: View {
                     .foregroundColor(.white.opacity(0.9))
                 
                 List {
-                    Text("Sarah completed her daily challenge! 🎉")
-                    Text("Jake just went for a morning hike! 🌄")
-                    Text("Lily is learning guitar today! 🎸")
+                    Text("Hana completed her daily challenge! 🎉")
+                    Text("Jayden just went for a morning hike! 🌄")
+                    Text("Meghan is learning guitar today! 🎸")
                 }
                 .scrollContentBackground(.hidden) // Keep background style
                 .background(Color.clear)
