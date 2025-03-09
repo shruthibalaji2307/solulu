@@ -11,7 +11,7 @@ Solulu is a social media app designed to reduce screen time for kids and teens b
 - **Friend-Based Challenges**: Activities created using shared hobbies among friends.
 - **Task Validation**: Image-based verification to confirm task completion.
 - **Gamification**: Rewards and achievements to keep users engaged.
-- 
+  
 <img width="548" alt="Screenshot 2025-03-09 at 4 51 02 PM" src="https://github.com/user-attachments/assets/9690bd4b-1206-4cee-834c-a619dbbe4b78" />
 
 ## Tech Stack
@@ -61,8 +61,6 @@ Solulu is a social media app designed to reduce screen time for kids and teens b
 ## Contributing
 Contributions are welcome! Please open an issue or submit a pull request.
 
-## License
-This project is licensed under the MIT License.
 
 
 
