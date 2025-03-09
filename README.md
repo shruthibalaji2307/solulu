@@ -14,7 +14,7 @@ The app supports UN Sustainable Development Goals 3 (Good Health and Well being)
 - **Task Validation**: Image-based verification to confirm task completion.
 - **Gamification**: Rewards and achievements to keep users engaged.
   
-
+<img width="953" alt="Screenshot 2025-03-09 at 4 50 41 PM" src="https://github.com/user-attachments/assets/c697e8cd-1d7e-4464-9610-e587e1447b12" />
 
 ## Tech Stack
 ### Frontend
@@ -28,8 +28,9 @@ The app supports UN Sustainable Development Goals 3 (Good Health and Well being)
 - **Neo4j**:
   - Manages user relationships and hobbies.
   - Generates friend-based tasks using graph-based analysis.
-    
-<img width="953" alt="Screenshot 2025-03-09 at 4 50 41 PM" src="https://github.com/user-attachments/assets/c697e8cd-1d7e-4464-9610-e587e1447b12" />
+
+  <img width="548" alt="Screenshot 2025-03-09 at 4 51 02 PM" src="https://github.com/user-attachments/assets/9690bd4b-1206-4cee-834c-a619dbbe4b78" />
+
 
 ## Installation & Setup
 ### Prerequisites
@@ -38,7 +39,7 @@ The app supports UN Sustainable Development Goals 3 (Good Health and Well being)
 - Neo4j and Qdrant database instance
 - Groq API access
 
-<img width="548" alt="Screenshot 2025-03-09 at 4 51 02 PM" src="https://github.com/user-attachments/assets/9690bd4b-1206-4cee-834c-a619dbbe4b78" />
+
 
 ### Steps
 
