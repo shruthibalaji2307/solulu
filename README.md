@@ -2,7 +2,8 @@ AI For Good Hackathon - https://lu.ma/slx5t6ik?tk=s2GXhE
 
 # Solulu
 
-Solulu is a social media app designed to reduce screen time for kids and teens by gamifying their passions and their friends' passions. The app encourages users to engage in real-world activities through daily quests and shared challenges.
+Solulu is a social media app designed to reduce screen time for kids and teens by gamifying their passions and their friends' passions. It is the solution to the doom scrolling delusion. The app encourages users to engage in real-world activities through daily quests and shared challenges. 
+The app supports UN Sustainable Development Goals 3 (Good Health and Well being), 4 (Quality Education), 11 (Sustainable cities and communities), 17 (Partnership for the goals).
 
 <img width="953" alt="Screenshot 2025-03-09 at 4 50 41 PM" src="https://github.com/user-attachments/assets/c697e8cd-1d7e-4464-9610-e587e1447b12" />
 
