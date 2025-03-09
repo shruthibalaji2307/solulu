@@ -112,11 +112,11 @@ struct HomeScreen: View {
                 .ignoresSafeArea()
             
             VStack(spacing: 20) { // Reduced spacing
-                Text("OffScreen")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .foregroundColor(.white)
-                    .padding(.top, 40)
+//                Text("OffScreen")
+//                    .font(.largeTitle)
+//                    .fontWeight(.bold)
+//                    .foregroundColor(.white)
+//                    .padding(.top, 40)
                 
                 Text("Daily Challenge")
                     .font(.title2)
@@ -168,7 +168,7 @@ struct HomeScreen: View {
                     HStack {
                         Image(systemName: "person.3.fill")
                             .font(.title)
-                        Text("Up My Rizz")
+                        Text("Vibe with the Tribe")
                             .font(.headline)
                     }
                     .foregroundColor(.white)
