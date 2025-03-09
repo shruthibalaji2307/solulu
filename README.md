@@ -1,3 +1,4 @@
+AI For Good Hackathon - https://lu.ma/slx5t6ik?tk=s2GXhE
 
 # Solulu
 
