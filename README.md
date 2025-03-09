@@ -2,7 +2,7 @@
 # Solulu
 
 Solulu is a social media app designed to reduce screen time for kids and teens by gamifying their passions and their friends' passions. The app encourages users to engage in real-world activities through daily quests and shared challenges.
-![image](https://github.com/user-attachments/assets/4cb52cca-9dd5-46d1-827c-523252497906)
+
 ## Features
 - **User Authentication**: Login and signup screens for secure access.
 - **Daily Quests**: AI-generated tasks based on user interests.
@@ -31,24 +31,21 @@ Solulu is a social media app designed to reduce screen time for kids and teens b
 - Groq API access
 
 ### Steps
+
+
 1. **Clone the Repository**:
    ```sh
    git clone https://github.com/yourusername/solulu.git
    cd solulu
    ```
-
-2. **Install Python Dependencies**:
-   ```sh
-   pip install -r backend/requirements.txt
-   ```
-
+2. **Create groq api key and update it in server.py**
+   
 3. **Setup Neo4j**:
    - Install Neo4j and start the database.
-   - Configure the connection URL in `config.py`.
 
 4. **Run the Backend Server**:
    ```sh
-   python backend/server.py
+   python3 server.py
    ```
 
 5. **Open Xcode and Run the iOS App**:
