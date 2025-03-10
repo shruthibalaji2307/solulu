@@ -1,5 +1,5 @@
 AI For Good Hackathon - https://lu.ma/slx5t6ik?tk=s2GXhE
-
+Video - https://drive.google.com/file/d/1UeC_JHnvTJAZagskJ4Mz-4Xv1yPeMJNA/view?usp=drive_link
 # Solulu
 
 Solulu is a social media app designed to reduce screen time for kids and teens by gamifying their passions and their friends' passions. It is the solution to the doom scrolling delusion. The app encourages users to engage in real-world activities through daily quests and shared challenges. 
